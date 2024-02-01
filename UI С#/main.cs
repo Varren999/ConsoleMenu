@@ -7,19 +7,20 @@ using UI_С_;
 
 class Program
 {
+    static void foo()
+    {
+        Console.WriteLine("Функция foo");
+    }
+    static void bar()
+    {
+        Console.WriteLine("Функция bar");
+    }
+
     static void Main()
     {
-        Menu menu = new Menu("Тестовое меню","foo","bar");
-        void foo()
-        {
-            Console.WriteLine("Функция foo");
-        }
-        void bar()
-        {
-            Console.WriteLine("Функция bar");
-        }
-        menu.setmenu += foo;
-        menu.setmenu += bar;
+        Menu menu = new Menu("Тестовое меню", new string[] { "foo", "bar" }) ;
+        menu.setmenu.Add(foo);
+        menu.setmenu.Add(bar);
         menu.Start();
     }
 }

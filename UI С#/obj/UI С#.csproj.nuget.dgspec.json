@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\123\\Source\\Repos\\UI_C-\\UI С#\\UI С#.csproj": {}
+    "C:\\Users\\123\\source\\repos\\UI_C-\\UI С#\\UI С#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\123\\Source\\Repos\\UI_C-\\UI С#\\UI С#.csproj": {
+    "C:\\Users\\123\\source\\repos\\UI_C-\\UI С#\\UI С#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\123\\Source\\Repos\\UI_C-\\UI С#\\UI С#.csproj",
+        "projectUniqueName": "C:\\Users\\123\\source\\repos\\UI_C-\\UI С#\\UI С#.csproj",
         "projectName": "UI С#",
-        "projectPath": "C:\\Users\\123\\Source\\Repos\\UI_C-\\UI С#\\UI С#.csproj",
+        "projectPath": "C:\\Users\\123\\source\\repos\\UI_C-\\UI С#\\UI С#.csproj",
         "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\123\\Source\\Repos\\UI_C-\\UI С#\\obj\\",
+        "outputPath": "C:\\Users\\123\\source\\repos\\UI_C-\\UI С#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config",

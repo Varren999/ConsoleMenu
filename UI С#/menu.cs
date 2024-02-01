@@ -12,31 +12,29 @@ using System.Threading.Tasks;
 namespace UI_С_
 {
     /// <summary>
-    /// 
+    /// Класс Menu создает одноуровневое меню для консольных приложений.
     /// </summary>
     internal class Menu
-    {
-        public delegate void setMenu();
-        
+    {       
         // Заголовок.
         string title = "";
+        //string emptyScreen = "                                                                                                                                                                    ";
 
         // Курсор
         string cursor = " -> ";
         string empty = " -  ";
-        string emptyScreen = "                                                                                                                                                                    ";
         string[] symbol = new string[10];
 
-        // Тескт меню;
-        string[] menu = new string[9];
-        string exit = "Выход";
+        // Текст пунктов меню;
+        string[] MenuItem = new string[10];
 
         // Количество пунктов меню.
         int param = 0;
 
         bool enter = true;
-        bool escape = false;
+        bool cycle = true;
         bool exitCycle = false;
+
         int move = 1;
 
         // Метод обрабатывает и выводит меню.
@@ -50,54 +48,39 @@ namespace UI_С_
                     symbol[0] = symbol[1] = symbol[2] = symbol[3] = symbol[4] = symbol[5] = symbol[6] = symbol[7] = symbol[8] = symbol[9] = empty;
                     symbol[move] = cursor;     
                 }
-                //ClearScreen();
-                Console.Clear();
-                Console.WriteLine($"\t -=  {title}  =-");
-                for (int i = 0; i < param; i++)
-                {
-                     Console.WriteLine(symbol[i + 1] + GetMenu(i));
-                }
-                Console.WriteLine(symbol[0] + GetExit());
-                Console.WriteLine($"\n  Для навигации по меню нажимайте {(char)24} {(char)25}, для выбора пункта меню нажмите Enter.");
+                Screen();
                 Move();
-                if (move > param)
-                {
-                     move = 0;
-                }
-                if (move < 0)
-                {
-                     move = param;
-                }
             }
             return move;
+        }
+
+        // Метод для отрисовки меню.
+        void Screen()
+        {
+            Console.Clear();
+            Console.WriteLine($"\t -=  {title}  =-");
+            for (int i = 1; i <= param; i++)
+            {
+                Console.WriteLine(symbol[i] + MenuItem[i]);
+            }
+            Console.WriteLine(symbol[0] + MenuItem[0]);
+            Console.WriteLine($"\n  Для навигации по меню нажимайте {(char)24} {(char)25}, для выбора пункта меню нажмите Enter или Пробел.");
         }
 
         //
         void SetMenu(int menu)
         {
-            switch (menu)
-            {
-                case 0: { Exit(); } break;
-                case 1: { SetMenu1(); } break;
-                case 2: { SetMenu2(); } break;
-                case 3: { SetMenu3(); } break;
-                case 4: { SetMenu4(); } break;
-                case 5: { SetMenu5(); } break;
-                case 6: { SetMenu6(); } break;
-                case 7: { SetMenu7(); } break;
-                case 8: { SetMenu8(); } break;
-                case 9: { SetMenu9(); } break;
-                default: { Console.WriteLine("Ошибка."); Console.ReadKey(true); } break;
-            }
+            Console.Clear();
+            Console.WriteLine($"\t\t-=  {this.MenuItem[menu]}  =-");
+            setmenu[menu]();
+            if(menu != 0)
+                Return();           
         }
 
-        string GetMenu(int num) => menu[num];
-        string GetExit() => exit;
-
-        // Метод для навигации по меню.
+        // Метод считывает и обрабатывает нажатия клавиш.
         void Move()
         {
-            bool cycle = true;
+            cycle = true;
             while (cycle)
             {
                 switch (Console.ReadKey().Key)
@@ -107,6 +90,7 @@ namespace UI_С_
                         move--;
                         cycle = false;
                     } break;
+
                     case ConsoleKey.DownArrow:
                     {
                         move++;
@@ -115,10 +99,24 @@ namespace UI_С_
 
                     case ConsoleKey.Enter:
                     {
-                            enter = false;
-                            cycle = false;
+                        enter = false;
+                        cycle = false;
+                    } break;
+
+                    case ConsoleKey.Spacebar:
+                    {
+                        enter = false;
+                        cycle = false;
                     } break;
                 }
+            }
+            if (move > param)
+            {
+                move = 0;
+            }
+            if (move < 0)
+            {
+                move = param;
             }
         }
 
@@ -126,7 +124,7 @@ namespace UI_С_
         void Return()
         {
             Console.WriteLine("Для выхода нажмите ESCAPE.");
-            bool cycle = true;
+            cycle = true;
             while (cycle)
             {
                 switch (Console.ReadKey().Key)
@@ -139,135 +137,52 @@ namespace UI_С_
             }
         }
 
-        //
-        void Exit() => exitCycle = true;
-
-        void SetMenu1()
-        {
-            //ClearScreen();
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  { this.menu[0]}  =-");
-            
-            Return();
-        }
-
-        void SetMenu2()
+        // Метод для выхода из приложения.
+        void Exit()
         {
             Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[1]}  =-");
-
-            Return();
+            exitCycle = true;
         }
 
-        void SetMenu3()
+        // Метод для очиски экрана.
+        //void ClearScreen()
+        //{
+        //    Console.SetCursorPosition(0,0);
+        //    for (int c = 0; c > 10; c++)
+        //    {
+        //        Console.WriteLine(emptyScreen);
+        //    }
+        //    Console.SetCursorPosition(0, 0);
+        //}
+
+        public delegate void setMenu();
+
+        /// <summary>
+        /// В setmenu вы можете загрузить свои методы.
+        /// </summary>
+        public List<setMenu> setmenu = new List<setMenu>();
+
+        /// <summary>
+        /// Конструктор Menu первым параметром загружается заголовок меню, вторым массив строк пунктов меню.
+        /// </summary>
+        /// <param name="Title"></param>
+        /// <param name="Menu"></param>
+        public Menu(string Title = "Меню версии 0.4", string[]? Menu = null)
         {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[2]}  =-");
-
-            Return();
-        }
-
-        void SetMenu4()
-        {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[3]}  =-");
-
-            Return();
-        }
-
-        void SetMenu5()
-        {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[4]}  =-");
-
-            Return();
-        }
-
-        void SetMenu6()
-        {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[5]}  =-");
-
-            Return();
-        }
-
-        void SetMenu7()
-        {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[6]}  =-");
-
-            Return();
-        }
-
-        void SetMenu8()
-        {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[7]}  =-");
-
-            Return();
-        }
-
-        void SetMenu9()
-        {
-            Console.Clear();
-            Console.WriteLine($"\t\t-=  {this.menu[8]}  =-");
-
-            Return();
-        }
-
-        // Метод подсчитывет не пустые строки
-        bool Is_Empty(string text)
-        {
-            if (text.Length != 0)
+            Console.Title = this.title = Title;
+            setmenu.Add(Exit);
+            MenuItem[0] = "Выход";
+            param = Menu.Length;
+            for(int c = 0; c < Menu.Length; c++)
             {
-                this.param++;
-                return true;
+                MenuItem[c + 1] = Menu[c];
             }
-            else
-                return false;
         }
 
-        //
-        void ClearScreen()
-        {
-            Console.SetCursorPosition(0,0);
-            for (int c = 0; c > 10; c++)
-            {
-                Console.WriteLine(emptyScreen);
-            }
-            Console.SetCursorPosition(0, 0);
-        }
-
-        public setMenu setmenu = null;
-
-        public Menu(string Title = "Меню версии 0.4", string Menu1 = "", string Menu2 = "", string Menu3 = "",
-            string Menu4 = "", string Menu5 = "", string Menu6 = "", string Menu7 = "", string Menu8 = "", string Menu9 = "")
-        {
-            Console.Title = Title;            
-            this.title = Title;
-            setmenu += Exit;
-            if (Is_Empty(Menu1))
-                this.menu[0] = Menu1;
-            if (Is_Empty(Menu2))
-                this.menu[1] = Menu2;
-            if (Is_Empty(Menu3))
-                this.menu[2] = Menu3;
-            if (Is_Empty(Menu4))
-                this.menu[3] = Menu4;
-            if (Is_Empty(Menu5))
-                this.menu[4] = Menu5;
-            if (Is_Empty(Menu6))
-                this.menu[5] = Menu6;
-            if (Is_Empty(Menu7))
-                this.menu[6] = Menu7;
-            if (Is_Empty(Menu8))
-                this.menu[7] = Menu8;
-            if (Is_Empty(Menu9))
-                this.menu[8] = Menu9;
-        }
-
-	// Метод для запуска меню.
-	public void Start()
+	    /// <summary>
+        /// Используйте этот метод для запуска меню после того как создадите конструктор и добавите в setmenu свои методы.
+        /// </summary>
+	    public void Start()
         {
             while (!exitCycle)
             {
