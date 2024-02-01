@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UI С#")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fd2b9e4073b5617f4695bd8b7c41cd2e90b88c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ffec24b8d6d65a5dd53dba567077b0c31bf3f46")]
 [assembly: System.Reflection.AssemblyProductAttribute("UI С#")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UI С#")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

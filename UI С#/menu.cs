@@ -1,6 +1,6 @@
 ﻿//=================================================================================================
-// version Menu 0.2
-// создано: 31.10.23, последняя модернизация 30.01.24
+// version Menu 0.3
+// создано: 31.10.23, последняя модернизация 1.02.24
 //=================================================================================================
 
 using System;
@@ -167,7 +167,7 @@ namespace UI_С_
         /// </summary>
         /// <param name="Title"></param>
         /// <param name="Menu"></param>
-        public Menu(string Title = "Меню версии 0.4", string[]? Menu = null)
+        public Menu(string Title = "Меню версии 0.3", string[]? Menu = null)
         {
             Console.Title = this.title = Title;
             setmenu.Add(Exit);
