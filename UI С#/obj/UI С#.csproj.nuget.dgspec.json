@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\varre\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj": {}
+    "C:\\Users\\123\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\varre\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj": {
+    "C:\\Users\\123\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\varre\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj",
+        "projectUniqueName": "C:\\Users\\123\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj",
         "projectName": "UI С#",
-        "projectPath": "C:\\Users\\varre\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj",
-        "packagesPath": "C:\\Users\\varre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\varre\\Source\\Repos\\Console_UI\\UI С#\\obj\\",
+        "projectPath": "C:\\Users\\123\\Source\\Repos\\Console_UI\\UI С#\\UI С#.csproj",
+        "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\123\\Source\\Repos\\Console_UI\\UI С#\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\varre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

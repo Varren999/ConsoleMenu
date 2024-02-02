@@ -1,6 +1,6 @@
 ﻿//=================================================================================================
 // version Menu 0.3
-// создано: 31.10.23, последняя модернизация 1.02.24
+// создано: 31.10.23, последняя модернизация 2.02.24
 //=================================================================================================
 
 using System;
@@ -49,6 +49,7 @@ namespace UI_С_
                     symbol[move] = cursor;     
                 }
                 Screen();
+                Keyboard();
                 Move();
             }
             return move;
@@ -72,13 +73,13 @@ namespace UI_С_
         {
             Console.Clear();
             Console.WriteLine($"\t\t-=  {this.MenuItem[menu]}  =-");
-            setmenu[menu]();
+            lsFunction[menu]();
             if(menu != 0)
                 Return();           
         }
 
         // Метод считывает и обрабатывает нажатия клавиш.
-        void Move()
+        void Keyboard()
         {
             cycle = true;
             while (cycle)
@@ -86,30 +87,39 @@ namespace UI_С_
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.UpArrow:
-                    {
-                        move--;
-                        cycle = false;
-                    } break;
+                        {
+                            move--;
+                            cycle = false;
+                        }
+                        break;
 
                     case ConsoleKey.DownArrow:
-                    {
-                        move++;
-                        cycle = false;
-                    } break;
+                        {
+                            move++;
+                            cycle = false;
+                        }
+                        break;
 
                     case ConsoleKey.Enter:
-                    {
-                        enter = false;
-                        cycle = false;
-                    } break;
+                        {
+                            enter = false;
+                            cycle = false;
+                        }
+                        break;
 
                     case ConsoleKey.Spacebar:
-                    {
-                        enter = false;
-                        cycle = false;
-                    } break;
+                        {
+                            enter = false;
+                            cycle = false;
+                        }
+                        break;
                 }
             }
+        }
+
+        // 
+        void Move()
+        {
             if (move > param)
             {
                 move = 0;
@@ -155,27 +165,47 @@ namespace UI_С_
         //    Console.SetCursorPosition(0, 0);
         //}
 
-        public delegate void setMenu();
+        public delegate void delFunction();
 
         /// <summary>
         /// В setmenu вы можете загрузить свои методы.
         /// </summary>
-        public List<setMenu> setmenu = new List<setMenu>();
+        public List<delFunction> lsFunction = new List<delFunction>();
 
         /// <summary>
         /// Конструктор Menu первым параметром загружается заголовок меню, вторым массив строк пунктов меню.
         /// </summary>
         /// <param name="Title"></param>
-        /// <param name="Menu"></param>
-        public Menu(string Title = "Меню версии 0.3", string[]? Menu = null)
+        /// <param name="ItemMenu"></param>
+        public Menu(string Title = "Меню версии 0.3", string[]? ItemMenu = null, List<delFunction>? LsFunction = null)
         {
-            Console.Title = this.title = Title;
-            setmenu.Add(Exit);
-            MenuItem[0] = "Выход";
-            param = Menu.Length;
-            for(int c = 0; c < Menu.Length; c++)
+            try
             {
-                MenuItem[c + 1] = Menu[c];
+                if (ItemMenu.Length != 0 && LsFunction.Count != 0)
+                {
+                    if (ItemMenu.Length == LsFunction.Count)
+                    {
+                        Console.Title = this.title = Title;
+                        lsFunction.Add(Exit);
+                        lsFunction.InsertRange(1, LsFunction);
+                        MenuItem[0] = "Выход";
+                        param = ItemMenu.Length;
+                        for (int c = 0; c < ItemMenu.Length; c++)
+                        {
+                            MenuItem[c + 1] = ItemMenu[c];
+                        }
+                    }
+                    else
+                        throw new Exception($"Количество загруженых пунктов меню не соотвествует количеству загруженых методов");
+                }
+                else
+                    throw new Exception($"В меню передано {ItemMenu.Length} пунктов");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadKey();
+                exitCycle = false;
             }
         }
 

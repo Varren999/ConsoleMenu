@@ -18,9 +18,7 @@ class Program
 
     static void Main()
     {
-        Menu menu = new Menu("Тестовое меню", new string[] { "foo", "bar" }) ;
-        menu.setmenu.Add(foo);
-        menu.setmenu.Add(bar);
+        Menu menu = new Menu("Тестовое меню", new string[] { "foo", "bar" }, new List<Menu.delFunction> {foo, bar }) ;
         menu.Start();
     }
 }
