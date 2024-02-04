@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.7.34221.43
+VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI С#", "UI С#\UI С#.csproj", "{65D542A2-F4D5-4615-9148-8C232E8182E2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMenu", "ConsoleMenu\ConsoleMenu\ConsoleMenu.csproj", "{959E0398-EE92-4F94-BAD0-AB2B4EB86D64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMenu", "ConsoleMenu\ConsoleMenu.csproj", "{959E0398-EE92-4F94-BAD0-AB2B4EB86D64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65D542A2-F4D5-4615-9148-8C232E8182E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65D542A2-F4D5-4615-9148-8C232E8182E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65D542A2-F4D5-4615-9148-8C232E8182E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65D542A2-F4D5-4615-9148-8C232E8182E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{959E0398-EE92-4F94-BAD0-AB2B4EB86D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{959E0398-EE92-4F94-BAD0-AB2B4EB86D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{959E0398-EE92-4F94-BAD0-AB2B4EB86D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EE6911AD-ACE8-401C-AE51-ABC59C3F4FD0}
+		SolutionGuid = {1E703412-0CDB-4B8A-B519-69CB12ED83D4}
 	EndGlobalSection
 EndGlobal

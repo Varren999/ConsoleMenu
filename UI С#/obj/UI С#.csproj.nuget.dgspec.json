@@ -19,6 +19,21 @@
         "net48": {}
       }
     },
+    "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj",
+        "projectName": "ConsoleMenu",
+        "projectPath": "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
     "C:\\Users\\varre\\source\\repos\\Console_UI\\UI С#\\UI С#.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -49,6 +64,9 @@
             "projectReferences": {
               "C:\\Users\\varre\\source\\repos\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj": {
                 "projectPath": "C:\\Users\\varre\\source\\repos\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj"
+              },
+              "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj": {
+                "projectPath": "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj"
               }
             }
           }

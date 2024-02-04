@@ -16,8 +16,8 @@
   "libraries": {
     "ConsoleMenu/1.0.0": {
       "type": "project",
-      "path": "../../ConsoleMenu/ConsoleMenu/ConsoleMenu.csproj",
-      "msbuildProject": "../../ConsoleMenu/ConsoleMenu/ConsoleMenu.csproj"
+      "path": "../ConsoleMenu/ConsoleMenu/ConsoleMenu.csproj",
+      "msbuildProject": "../ConsoleMenu/ConsoleMenu/ConsoleMenu.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -59,6 +59,9 @@
           "projectReferences": {
             "C:\\Users\\varre\\source\\repos\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj": {
               "projectPath": "C:\\Users\\varre\\source\\repos\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj"
+            },
+            "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj": {
+              "projectPath": "C:\\Users\\varre\\source\\repos\\Console_UI\\ConsoleMenu\\ConsoleMenu\\ConsoleMenu.csproj"
             }
           }
         }
