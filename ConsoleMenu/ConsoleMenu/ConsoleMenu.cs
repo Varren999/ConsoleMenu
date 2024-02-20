@@ -1,13 +1,10 @@
 ﻿//=================================================================================================
 // version Menu 0.3
-// создано: 31.10.23, последняя модернизация 4.02.24
+// создано: 31.10.23, последняя модернизация 20.02.24
 //=================================================================================================
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleMenu
 {
@@ -18,18 +15,17 @@ namespace ConsoleMenu
     {       
         // Заголовок.
         string title = "";
-        //string emptyScreen = "                                                                                                                                                                    ";
 
         // Курсор
         string cursor = " -> ";
-        string empty = " -  ";
+        string empty = "    ";
         string[] symbol = new string[10];
 
         // Текст пунктов меню;
         string[] MenuItem = new string[10];
 
         // Количество пунктов меню.
-        int param = 0;
+        int item = 0;
 
         bool enter = true;
         bool cycle = true;
@@ -43,7 +39,7 @@ namespace ConsoleMenu
             enter = true;
             while (enter)
             {
-                if (move >= 0 && move <= param)
+                if (move >= 0 && move <= item)
                 {
                     symbol[0] = symbol[1] = symbol[2] = symbol[3] = symbol[4] = symbol[5] = symbol[6] = symbol[7] = symbol[8] = symbol[9] = empty;
                     symbol[move] = cursor;     
@@ -60,7 +56,7 @@ namespace ConsoleMenu
         {
             Console.Clear();
             Console.WriteLine($"\t -=  {title}  =-");
-            for (int i = 1; i <= param; i++)
+            for (int i = 1; i <= item; i++)
             {
                 Console.WriteLine(symbol[i] + MenuItem[i]);
             }
@@ -75,7 +71,7 @@ namespace ConsoleMenu
             Console.WriteLine($"\t\t-=  {this.MenuItem[menu]}  =-");
             lsFunction[menu]();
             if(menu != 0)
-                Return();           
+                Return();
         }
 
         // Метод считывает и обрабатывает нажатия клавиш.
@@ -120,13 +116,13 @@ namespace ConsoleMenu
         // 
         void Move()
         {
-            if (move > param)
+            if (move > item)
             {
                 move = 0;
             }
             if (move < 0)
             {
-                move = param;
+                move = item;
             }
         }
 
@@ -155,12 +151,18 @@ namespace ConsoleMenu
         }
 
         // Метод для очиски экрана.
-        //void ClearScreen()
+        //void Clear()
         //{
-        //    Console.SetCursorPosition(0,0);
-        //    for (int c = 0; c > 10; c++)
+        //    string empty = "                                                                                                                      ";
+        //    Console.SetCursorPosition(0, 0);
+        //    try
         //    {
-        //        Console.WriteLine(emptyScreen);
+        //        for (int c = 0; c < param + 5; c++)
+        //            Console.WriteLine(empty);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
         //    }
         //    Console.SetCursorPosition(0, 0);
         //}
@@ -189,7 +191,7 @@ namespace ConsoleMenu
                         lsFunction.Add(Exit);
                         lsFunction.InsertRange(1, LsFunction);
                         MenuItem[0] = "Выход";
-                        param = ItemMenu.Length;
+                        item = ItemMenu.Length;
                         for (int c = 0; c < ItemMenu.Length; c++)
                         {
                             MenuItem[c + 1] = ItemMenu[c];
