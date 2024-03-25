@@ -10,3 +10,4 @@ C:\Users\varre\source\repos\Console_UI\ConsoleMenu\ConsoleMenu\obj\Debug\Console
 C:\Users\varre\source\repos\Console_UI\ConsoleMenu\ConsoleMenu\obj\Debug\ConsoleMenu.csproj.CoreCompileInputs.cache
 C:\Users\varre\source\repos\Console_UI\ConsoleMenu\ConsoleMenu\obj\Debug\ConsoleMenu.dll
 C:\Users\varre\source\repos\Console_UI\ConsoleMenu\ConsoleMenu\obj\Debug\ConsoleMenu.pdb
+C:\Users\varre\source\repos\Console_UI\ConsoleMenu\ConsoleMenu\obj\Debug\ConsoleM.0AEE25CD.Up2Date
