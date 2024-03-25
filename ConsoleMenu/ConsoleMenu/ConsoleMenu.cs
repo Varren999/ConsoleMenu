@@ -1,6 +1,6 @@
 ﻿//=================================================================================================
 // version Menu 0.3
-// создано: 31.10.23, последняя модернизация 20.02.24
+// создано: 31.10.23, последняя модернизация 25.03.24
 //=================================================================================================
 
 using System;
@@ -14,35 +14,31 @@ namespace ConsoleMenu
     public class Menu
     {       
         // Заголовок.
-        string title = "";
+        private  readonly string title = "";
 
         // Курсор
-        string cursor = " -> ";
-        string empty = "    ";
-        string[] symbol = new string[10];
+        private const string CURSOR = " -> ";
+        private const string EMPTY  = "    ";
+        private string[] symbol = new string[10];
 
         // Текст пунктов меню;
-        string[] MenuItem = new string[10];
+        private string[] MenuItem = new string[10];
 
         // Количество пунктов меню.
-        int item = 0;
+        private int item = 0, move = 1;
 
-        bool enter = true;
-        bool cycle = true;
-        bool exitCycle = false;
-
-        int move = 1;
+        private bool enter = true, cycle = true, exitCycle = false;
 
         // Метод обрабатывает и выводит меню.
-        int PrintMenu()
+        private int PrintMenu()
         {
             enter = true;
             while (enter)
             {
                 if (move >= 0 && move <= item)
                 {
-                    symbol[0] = symbol[1] = symbol[2] = symbol[3] = symbol[4] = symbol[5] = symbol[6] = symbol[7] = symbol[8] = symbol[9] = empty;
-                    symbol[move] = cursor;     
+                    symbol[0] = symbol[1] = symbol[2] = symbol[3] = symbol[4] = symbol[5] = symbol[6] = symbol[7] = symbol[8] = symbol[9] = EMPTY;
+                    symbol[move] = CURSOR;
                 }
                 Screen();
                 Keyboard();
@@ -52,7 +48,7 @@ namespace ConsoleMenu
         }
 
         // Метод для отрисовки меню.
-        void Screen()
+        private void Screen()
         {
             Console.Clear();
             Console.WriteLine($"\t -=  {title}  =-");
@@ -65,7 +61,7 @@ namespace ConsoleMenu
         }
 
         //
-        void SetMenu(int menu)
+        private void SetMenu(int menu)
         {
             Console.Clear();
             Console.WriteLine($"\t\t-=  {this.MenuItem[menu]}  =-");
@@ -75,10 +71,11 @@ namespace ConsoleMenu
         }
 
         // Метод считывает и обрабатывает нажатия клавиш.
-        void Keyboard()
+        private void Keyboard()
         {
             cycle = true;
             while (cycle)
+            //if(Console.KeyAvailable)
             {
                 switch (Console.ReadKey().Key)
                 {
@@ -104,17 +101,14 @@ namespace ConsoleMenu
                         break;
 
                     case ConsoleKey.Spacebar:
-                        {
-                            enter = false;
-                            cycle = false;
-                        }
-                        break;
+                         goto case ConsoleKey.Enter;
+                        
                 }
             }
         }
 
         // 
-        void Move()
+        private void Move()
         {
             if (move > item)
             {
@@ -127,7 +121,7 @@ namespace ConsoleMenu
         }
 
         // Метод для выхода из подменю.
-        void Return()
+        private void Return()
         {
             Console.WriteLine("Для выхода нажмите ESCAPE.");
             cycle = true;
@@ -144,7 +138,7 @@ namespace ConsoleMenu
         }
 
         // Метод для выхода из приложения.
-        void Exit()
+        private void Exit()
         {
             Console.Clear();
             exitCycle = true;
@@ -170,7 +164,7 @@ namespace ConsoleMenu
         public delegate void delFunction();
 
         /// <summary>
-        /// В setmenu вы можете загрузить свои методы.
+        /// В lsFunction вы можете загрузить свои методы.
         /// </summary>
         public List<delFunction> lsFunction = new List<delFunction>();
 
@@ -211,10 +205,10 @@ namespace ConsoleMenu
             }
         }
 
-	    /// <summary>
-        /// Используйте этот метод для запуска меню после того как создадите конструктор и добавите в setmenu свои методы.
+        /// <summary>
+        /// Используйте этот метод для запуска меню после того как создадите конструктор и добавите в lsFunction свои методы.
         /// </summary>
-	    public void Start()
+        public void Start()
         {
             while (!exitCycle)
             {

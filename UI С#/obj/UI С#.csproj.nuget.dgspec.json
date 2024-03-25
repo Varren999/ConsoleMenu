@@ -41,7 +41,7 @@
         "projectName": "UI С#",
         "projectPath": "C:\\Users\\varre\\source\\repos\\Console_UI\\UI С#\\UI С#.csproj",
         "packagesPath": "C:\\Users\\varre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\varre\\Source\\Repos\\Console_UI\\UI С#\\obj\\",
+        "outputPath": "C:\\Users\\varre\\source\\repos\\Console_UI\\UI С#\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -75,6 +75,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -96,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

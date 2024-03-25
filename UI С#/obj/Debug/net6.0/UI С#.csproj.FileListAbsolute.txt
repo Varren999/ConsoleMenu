@@ -60,4 +60,4 @@ C:\Users\123\Source\Repos\Console_UI\UI С#\obj\Debug\net6.0\ref\UI С#.dll
 C:\Users\varre\source\repos\Console_UI\UI С#\obj\Debug\net6.0\UI С#.csproj.AssemblyReference.cache
 C:\Users\varre\source\repos\Console_UI\UI С#\bin\Debug\net6.0\ConsoleMenu.dll
 C:\Users\varre\source\repos\Console_UI\UI С#\bin\Debug\net6.0\ConsoleMenu.pdb
-C:\Users\varre\source\repos\Console_UI\UI С#\obj\Debug\net6.0\UI С#.csproj.CopyComplete
+C:\Users\varre\source\repos\Console_UI\UI С#\obj\Debug\net6.0\UI С#.csproj.Up2Date
